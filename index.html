@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Word Counter Tool | Free Online</title>
+  <meta name="description" content="A fast, free and minimal online tool to count words and characters in your text. No ads, no clutter, no confusion." />
+  <meta name="keywords" content="word counter, character counter, online word counter, free word count tool, simple tools" />
+  <meta name="author" content="SimpleTools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Google AdSense AUTO Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7515058459267335"
+     crossorigin="anonymous"></script>
+
+  <meta name="google-adsense-account" content="ca-pub-7515058459267335">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 700px;
+      height: 200px;
+      padding: 15px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      background: #fff;
+    }
+
+    .stats {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .ads {
+      margin-top: 40px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="logo.png" alt="SimpleTools Logo" />
+    <h1>Word Counter</h1>
+  </div>
+
+  <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+  <div class="stats">
+    Word Count: <span id="wordCount">0</span> |
+    Character Count: <span id="charCount">0</span> |
+    Character Count (no spaces): <span id="charCountNoSpace">0</span>
+  </div>
+
+  <div class="ads">
+    <p><em>Ad space will automatically appear here soon if AdSense is approved.</em></p>
+  </div>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const wordCount = document.getElementById('wordCount');
+    const charCount = document.getElementById('charCount');
+    const charCountNoSpace = document.getElementById('charCountNoSpace');
+
+    textInput.addEventListener('input', () => {
+      const text = textInput.value;
+      const trimmed = text.trim();
+      const words = trimmed.length === 0 ? 0 : trimmed.split(/\s+/).length;
+      const chars = text.length;
+      const charsNoSpace = text.replace(/\s/g, '').length;
+
+      wordCount.textContent = words;
+      charCount.textContent = chars;
+      charCountNoSpace.textContent = charsNoSpace;
+    });
+  </script>
+</body>
+</html>
